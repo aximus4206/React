@@ -2,7 +2,7 @@ import React from 'react';
 import List from './components/List/List';
 import Category from './components/Category/Category';
 import Posts from './Build/PostBase';
-import './components/App.module.scss'
+import './App.module.scss'
 
 function App() {
   return <>
