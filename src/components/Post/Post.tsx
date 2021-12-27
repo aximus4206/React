@@ -1,13 +1,19 @@
-import React from 'react';
-import classes from './Post.module.scss';
+import styles from "./Post.module.scss";
+import { Post } from "../../Build/PostBase";
 
-function Post({ title, body }: { title: string; body: string }) {
-  return (
-    <div className={classes.article}>
-      <h2>{title}</h2>
-      <p>{body}</p>
-    </div>
-  )
+const PostItem = (props: { post: Post }) => {
+    if (props.post.title.length) {
+        return <div className={styles.container__post}>
+            <div className={styles.title}>
+                <p className={styles.container__p}><strong>Category:</strong>{props.post.category}</p>
+                <p className={styles.container__p}><strong>TItle:</strong>{props.post.title}</p>
+            </div>
+            <div className={"text"}>
+                <p>{props.post.text}</p>
+            </div>
+        </div>;
+    }
+    return <div />;
 }
 
-export default Post;
+export default PostItem;

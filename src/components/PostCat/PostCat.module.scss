@@ -1,0 +1,27 @@
+$border: 2px solid teal;
+.container {
+    width: 50vw;
+    min-height: 30vh;
+    border: $border;
+    padding-bottom: 30px;
+    background-color:powderblue;
+    border-radius: 20px;
+}
+
+.container__filter {
+    height: 5vh;
+    border-bottom: $border;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    input {
+        margin-left: 2px;
+    }
+    div {
+        padding: 10px;
+        border-right: 2px solid teal;
+    }
+    div:last-child {
+        border-right: none;
+    }
+}

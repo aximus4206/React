@@ -1,5 +1,15 @@
- .article{
-    background-color: teal;
-    padding: 15px;
-    margin: 10px;
+.container__post {
+    padding: 10px;
+}
+.title {
+    height: 10vh;
+    border-bottom: dashed 2px teal;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.container__p {
+    margin-bottom: 10px;
 }

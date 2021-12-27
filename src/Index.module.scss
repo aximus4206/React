@@ -1,0 +1,41 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 60px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+$border: 2px solid teal;
+.container {
+    width: 70vw;
+    min-height: 30vh;
+    border: $border;
+    padding-bottom: 30px;
+    background-color:powderblue;
+    border-radius: 20px;
+}
+
+.container__filter {
+    min-height: 5vh;
+    border-bottom: $border;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    input {
+        margin-left: 2px;
+    }
+    div {
+        padding: 10px;
+        border-right: 2px solid teal;
+    }
+    div:last-child {
+        border-right: none;
+    }
+}
