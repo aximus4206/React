@@ -13,7 +13,6 @@ const Container: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.container__filter}>
-
         <button className={styles.cat_btn} onClick={filter} data-value={'JavaScript'}>JavaScript</button>
 
         <button className={styles.cat_btn}  onClick={filter} data-value={'PHP'}>PHP</button>
