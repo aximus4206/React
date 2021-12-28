@@ -5,21 +5,31 @@
 
 body {
     padding-top: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: skyblue;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 40px;
+    font-size: 5em;
+	color: transparent; 										
+	background-color: #017fb9;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
 }
 
-$border: 2px solid teal;
+$border: 2px solid #017fb9;
 .container {
-    width: 70vw;
     min-height: 30vh;
     border: $border;
     padding-bottom: 30px;
-    background-color:powderblue;
+    background-color:skyblue;
     border-radius: 20px;
+    margin: 60px 30px;
+
 }
 
 .container__filter {
@@ -33,9 +43,13 @@ $border: 2px solid teal;
     }
     div {
         padding: 10px;
-        border-right: 2px solid teal;
+        border-right: 2px solid #017fb9;
     }
     div:last-child {
         border-right: none;
     }
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }

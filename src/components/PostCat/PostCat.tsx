@@ -1,33 +1,28 @@
-import React, { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
+import React, { MouseEvent, useState } from 'react';
 import Posts, { Post } from "../../Build/PostBase";
 import PostItem from '../Post/Post';
 import styles from "./PostCat.module.scss"
 
 const Container: React.FC = () => {
-  let temp: Post = {
-    category: "",
-    title: "",
-    text: ""
-  }
-  let [selectedItem, setSelectedItem]: [Post, Dispatch<SetStateAction<Post>>] = useState(temp);
+  let [selectedItem, setSelectedItem] = useState<Post[]>(Posts);
 
-  const filter = (event: ChangeEvent<HTMLInputElement>) => {
-    let temp = Posts.find(post => post.category === (event.target!).value)!;
-    setSelectedItem(temp)
+  const filter = (event: MouseEvent<HTMLButtonElement>) => {
+    setSelectedItem(Posts.filter(post => post.category === event.currentTarget.dataset.value))
   }
 
   return (
     <div className={styles.container}>
       <div className={styles.container__filter}>
-        {Posts.map(post => {
-          return (<div key={post.category}><label>
-            {post.category}
-            <input type="radio" name="category" value={post.category} onChange={filter} />
-          </label>
-          </div>)
-        })}
+
+        <button className={styles.cat_btn} onClick={filter} data-value={'JavaScript'}>JavaScript</button>
+
+        <button className={styles.cat_btn}  onClick={filter} data-value={'PHP'}>PHP</button>
+
+        <button className={styles.cat_btn} onClick={filter} data-value={'HTML'}>HTML</button>
       </div>
-      {<PostItem post={selectedItem} />}
+      {selectedItem.map(post => {
+        return <PostItem key={post.id} post={post} />
+      })}
     </div>
   );
 }
